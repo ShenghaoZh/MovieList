@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Spectra-spa/static/css/main.c429935f.chunk.css",
+    "main.js": "/Spectra-spa/static/js/main.e166771a.chunk.js",
+    "main.js.map": "/Spectra-spa/static/js/main.e166771a.chunk.js.map",
+    "runtime-main.js": "/Spectra-spa/static/js/runtime-main.0e69d5ee.js",
+    "runtime-main.js.map": "/Spectra-spa/static/js/runtime-main.0e69d5ee.js.map",
+    "static/js/2.95f58057.chunk.js": "/Spectra-spa/static/js/2.95f58057.chunk.js",
+    "static/js/2.95f58057.chunk.js.map": "/Spectra-spa/static/js/2.95f58057.chunk.js.map",
+    "index.html": "/Spectra-spa/index.html",
+    "precache-manifest.cfb29a1ffda419b5e5c61568e5258c2b.js": "/Spectra-spa/precache-manifest.cfb29a1ffda419b5e5c61568e5258c2b.js",
+    "service-worker.js": "/Spectra-spa/service-worker.js",
+    "static/css/main.c429935f.chunk.css.map": "/Spectra-spa/static/css/main.c429935f.chunk.css.map",
+    "static/js/2.95f58057.chunk.js.LICENSE.txt": "/Spectra-spa/static/js/2.95f58057.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0e69d5ee.js",
+    "static/js/2.95f58057.chunk.js",
+    "static/css/main.c429935f.chunk.css",
+    "static/js/main.e166771a.chunk.js"
+  ]
+}
