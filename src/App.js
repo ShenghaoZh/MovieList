@@ -1,26 +1,54 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import store from "./index";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+
+import List from "./components/List.js";
+import { actions, getList } from "./modules/index";
+import selectors from "./modules/selectors";
+
+class App extends React.Component {
+  componentDidMount() {
+    store.dispatch(getList());
+  }
+
+  render() {
+    const { myList, recommendation, actions } = this.props;
+    const { removeItem, addItem } = actions;
+    return (
+      <div>
+        <List
+          title="My List"
+          content={myList}
+          handleFunction={removeItem}
+        />
+        <List
+          title="Recommendations"
+          content={recommendation}
+          handleFunction={addItem}
+        />
+        <h2>My List</h2>
+        <ul>
+          {myList.map((item) => (
+            <li key={item.id}>{item.title}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    myList: selectors.getMyList(state),
+    recommendation: selectors.getRecommendation(state),
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators({ ...actions }, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
